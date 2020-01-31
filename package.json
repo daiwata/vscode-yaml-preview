@@ -1,0 +1,58 @@
+{
+    "name": "yaml-preview",
+    "displayName": "Yaml Preview",
+    "description": "Displays a preview of yaml content",
+    "version": "1.0.2",
+    "publisher": "daiwata",
+    "license": "MIT",
+    "keywords": [
+        "yaml",
+        "preview",
+        "markup",
+        "viewer",
+        "render"
+    ],
+    "engines": {
+        "vscode": "^1.41.1"
+    },
+    "categories": [
+        "Languages",
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:yaml.showPreview",
+        "onCommand:yaml.showPreviewToSide",
+        "onLanguage:yaml"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "yaml.showPreview",
+                "title": "Open preview",
+                "category": "Yaml"
+            },
+            {
+                "command": "yaml.showPreviewToSide",
+                "title": "Open preview to the side",
+                "category": "Yaml"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.48",
+        "@types/node": "^7.10.6",
+        "typescript": "^2.9.2",
+        "vscode": "^1.1.34"
+    },
+    "dependencies": {
+        "js-yaml": "^3.13.1"
+    }
+}
