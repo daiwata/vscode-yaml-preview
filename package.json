@@ -2,7 +2,7 @@
     "name": "yaml-preview",
     "displayName": "Yaml Preview",
     "description": "Displays a preview of yaml content",
-    "version": "1.0.2",
+    "version": "0.0.1",
     "publisher": "daiwata",
     "license": "MIT",
     "keywords": [
@@ -36,7 +36,6 @@
         ]
     },
     "devDependencies": {
-        "@types/mocha": "^2.2.48",
         "@types/node": "^7.10.6",
         "typescript": "^2.9.2",
         "vscode": "^1.1.34"
