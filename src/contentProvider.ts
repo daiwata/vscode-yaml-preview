@@ -42,9 +42,18 @@ export class yamlContentProvider implements vscode.TextDocumentContentProvider {
 		let ymlObj = jsyaml.safeLoad(text);
 		let body = yaml2html(ymlObj);
 
+		const styleTable = "table { border:none; border-collapse:collapse; }";
+		const styleTh = "th { background-color: darkgray; color: black; white-space:normal; padding:5px; width:70px; border:1px solid silver; border-collapse:collapse; vertical-align:top }";
+		const styleTd = "td { padding:5px; border:1px solid silver; border-collapse:collapse; }";
+
 		return `<!DOCTYPE html>
-			<html>
-			<head>
+		<html>
+		<head>
+		<style>
+			${styleTable}
+			${styleTh}
+			${styleTd}
+		</style>
 				<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 			</head>
 			<body class="vscode-body">

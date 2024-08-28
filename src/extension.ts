@@ -18,13 +18,13 @@ export function activate(context: vscode.ExtensionContext) {
 	const contentProviderRegistration = vscode.workspace.registerTextDocumentContentProvider(yamlContentProvider.yamlURI.scheme, contentProvider);
 
 	// Show yaml
-	let previewDisposable = vscode.commands.registerCommand('yaml.showPreview', async () => {
+	let previewDisposable = vscode.commands.registerCommand('yaml2table.showPreview', async () => {
 		yamlPanel(vscode.ViewColumn.One);
 		return;
 	});
 
 	// Show yaml to the side
-	let sidePreviewDisposable = vscode.commands.registerCommand('yaml.showPreviewToSide', async () => {
+	let sidePreviewDisposable = vscode.commands.registerCommand('yaml2table.showPreviewToSide', async () => {
 		yamlPanel(vscode.ViewColumn.Two);
 		return;
 	});

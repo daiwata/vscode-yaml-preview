@@ -1,10 +1,11 @@
 {
-    "name": "yaml-preview",
-    "displayName": "Yaml Preview",
-    "description": "Displays a preview of yaml content",
-    "version": "0.0.1",
-    "publisher": "daiwata",
+    "name": "yaml2table-preview",
+    "displayName": "Yaml2Table Preview",
+    "description": "Displays a preview of yaml content as a table",
+    "version": "1.0.6",
+    "publisher": "adautomendes",
     "license": "MIT",
+    "icon": "resources/icon.png",
     "keywords": [
         "yaml",
         "preview",
@@ -16,31 +17,43 @@
         "vscode": "^1.41.1"
     },
     "activationEvents": [
-        "onCommand:yaml.showPreview",
-        "onCommand:yaml.showPreviewToSide",
+        "onCommand:yaml2table.showPreview",
+        "onCommand:yaml2table.showPreviewToSide",
         "onLanguage:yaml"
     ],
-    "main": "./out/src/extension",
+    "main": "./out/src/extension.js",
     "contributes": {
         "commands": [
             {
-                "command": "yaml.showPreview",
+                "command": "yaml2table.showPreview",
                 "title": "Open preview",
-                "category": "Yaml"
+                "category": "Yaml2Table"
             },
             {
-                "command": "yaml.showPreviewToSide",
+                "command": "yaml2table.showPreviewToSide",
                 "title": "Open preview to the side",
-                "category": "Yaml"
+                "category": "Yaml2Table"
             }
         ]
     },
     "devDependencies": {
         "@types/node": "^7.10.6",
-        "typescript": "^2.9.2",
+        "typescript": "^5.5.4",
         "vscode": "^1.1.34"
     },
     "dependencies": {
         "js-yaml": "^3.13.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/adautomendes/vscode-yaml-preview"
+    },
+    "scripts": {
+        "build": "npm install && npx tsc",
+        "clean": "rm -rf node_modules out yaml2table-preview-1.0.*",
+        "pretest": "tsc -p ./",
+        "package": "vsce package",
+        "publish": "vsce publish",
+        "all": "npm run clean && npm run build && npm run package"
     }
 }
